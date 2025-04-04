@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1743707732 source:c:\users\nguyen tu\documents\xetang\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"graphics.h"
+	"defs.h"
+	"logic.h"
+
+1743707801 c:\users\nguyen tu\documents\xetang\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"logic.h"
+
+1743707867 c:\users\nguyen tu\documents\xetang\defs.h
+
+1743707867 c:\users\nguyen tu\documents\xetang\logic.h
+
+1743707732 source:c:\users\nguyen tu\documents\tictactoe\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"graphics.h"
+	"defs.h"
+	"logic.h"
+
+1743707801 c:\users\nguyen tu\documents\tictactoe\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+	"logic.h"
+
+1743707867 c:\users\nguyen tu\documents\tictactoe\defs.h
+
+1743707867 c:\users\nguyen tu\documents\tictactoe\logic.h
+
