@@ -29,7 +29,7 @@ void processClick(int x, int y, Tictactoe& game, Graphics& graphics) {
     }
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
         cerr << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << endl;
         return -1;
@@ -48,7 +48,6 @@ int main(int argc, char *argv[]) {
     game.init();
     graphics.render(game);
 
-    int x, y;
     SDL_Event event;
     bool quit = false;
 
@@ -60,7 +59,8 @@ int main(int argc, char *argv[]) {
                 quit = true;
                 break;
 
-            case SDL_MOUSEBUTTONDOWN:
+            case SDL_MOUSEBUTTONDOWN: {
+                int x, y;
                 SDL_GetMouseState(&x, &y);
 
                 processClick(x, y, game, graphics);
@@ -69,10 +69,12 @@ int main(int argc, char *argv[]) {
                 if (game.gameOver) {
                     int gameState = 0;
 
-                    if (game.checkGameState(X_CELL)) {
+                    if (game.checkWin(X_CELL)) {
                         gameState = 1;
-                    } else if (game.checkGameState(O_CELL)) {
+                    } else if (game.checkWin(O_CELL)) {
                         gameState = -1;
+                    } else if (game.isBoardFull()) {
+                        gameState = 0;
                     }
 
                     graphics.renderResult(gameState);
@@ -85,11 +87,11 @@ int main(int argc, char *argv[]) {
                     }
                 }
                 break;
+            }
         }
     }
 
     graphics.quit();
     Mix_CloseAudio();
-
     return 0;
 }
